@@ -41,7 +41,7 @@
                         Cart
                         <span class="badge bg-light text-dark ms-1 rounded-pill">0</span>
                     </a>
-                    <a href="{{ route('dashboard') }}" class="btn btn-outline-light ms-1">
+                    <a href="{{ route('login') }}" class="btn btn-outline-light ms-1">
                         <i class="bi-person-fill me-1"></i>
                         Login
                     </a>
@@ -62,7 +62,7 @@
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-bs-interval="3000">
                     <img src="{{ asset('storage/slider/' . $slider->image) }}" class="d-block w-100" alt="{{ $slider->image }}">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>{{ $slider->title }}</h5>
+                        <h5>{{ $slider->title }} </h5>
                         <p>{{ $slider->caption }}</p>
                     </div>
                 </div>
