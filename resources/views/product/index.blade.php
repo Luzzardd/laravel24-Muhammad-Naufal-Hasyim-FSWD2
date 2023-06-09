@@ -18,6 +18,7 @@
                                 <th>Price</th>
                                 <th>Sale Price</th>
                                 <th>Brand</th>
+                                <th>image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -30,6 +31,10 @@
                                     <td>Rp. {{ number_format($product->price, 0, 2) }}</td>
                                     <td>Rp. {{ number_format($product->sale_price, 0, 2) }}</td>
                                     <td>{{ $product->brands }}</td>
+                                    <td>
+                                        <img src="{{ asset('storage/product/' . $product->image) }}" class="img-fluid"
+                                            style="max-width: 100px; max-height: 50px" alt="{{ $product->image }}">
+                                    </td>
                                     <td>
                                         <form onsubmit="return confirm('Are you sure? ');" action="{{ route('product.destroy', $product->id) }}" method="POST">
                                             <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-warning">Edit</a>
