@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form action="{{ route('user.store') }}" method="POST">
                         @csrf
-                        
+
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
@@ -23,13 +23,17 @@
                             <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
                         <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="role" class="form-label">Role</label>
                             <select class="form-select" aria-label="role" id="role" name="role">
                                 <option selected disabled>- Choose Role -</option>
                                 @foreach ($roles as $role)
                                     <option value="{{ $role->id }}">{{ $role->name }}</option>
                                 @endforeach
-                                
+
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

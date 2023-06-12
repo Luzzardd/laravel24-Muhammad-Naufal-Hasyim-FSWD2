@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -34,7 +35,7 @@ class UserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'role_id' => $request->role,
-            'password' => bcrypt('password') // default password, sementara di hardcode
+            'password' => Hash::make($request->password), // default password, sementara di hardcode
         ]);
 
         // Redirect ke halaman user.index
@@ -62,7 +63,8 @@ class UserController extends Controller
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
-            'phone' => $request->phone
+            'phone' => $request->phone,
+            'password'=>hash::make($request->password),
         ]);
 
         // Redirect ke halaman user.index
